@@ -1,75 +1,65 @@
-# 🕶️ mossad-cli
+# mossad-cli
 
-> **Archive chiffrée moderne `.mossad` en Rust**  
-> Compression + chiffrement **Kuznyechik (CTR)** + plausible deniability  
-> Projet sérieux, format propriétaire, zéro bullshit.
+Archive chiffrée moderne en Rust — compression, chiffrement Kuznyechik (CTR), plausible deniability.
 
----
+## Présentation
 
-## 🚀 Présentation
+**mossad-cli** est un outil en ligne de commande pour créer des archives chiffrées au format propriétaire `.mossad`.
 
-**mossad-cli** est un outil **CLI Rust** permettant de :
+| Fonction | Implémentation |
+|----------|----------------|
+| Compression | DEFLATE |
+| Chiffrement | Kuznyechik (mode CTR) |
+| Dérivation de clé | Argon2id |
+| Authentification | Encrypt-then-MAC (HMAC-SHA256) |
+| Intégrité | CRC64 par fichier |
 
-- 📦 archiver **des dossiers entiers**
-- 🗜️ compresser (DEFLATE)
-- 🔐 chiffrer avec **Kuznyechik en mode CTR**
-- 🔑 dériver les clés via **Argon2id**
-- 🕵️ fournir une **plausible deniability réelle**
-- 🧱 utiliser un **format propriétaire robuste : `.mossad`**
+Le projet privilégie la lisibilité du code et la robustesse cryptographique.
 
-Le projet vise un équilibre clair :
-> **simplicité d’usage**, **robustesse crypto**, **lisibilité du code**
+## Fonctionnalités
 
----
+- Format `.mossad` auto-descriptif et versionné
+- Streaming (consommation mémoire constante)
+- Double volume caché (plausible deniability)
+- Barre de progression
+- Saisie du mot de passe masquée
 
-## ✨ Fonctionnalités principales
+## Installation
 
-- ✅ Format `.mossad` auto‑descriptif et versionné
-- ✅ Encrypt‑then‑MAC (HMAC‑SHA256)
-- ✅ CRC64 par fichier
-- ✅ Streaming (RAM constante)
-- ✅ Barre de progression
-- ✅ Mot de passe masqué
-- ✅ Double volume caché (HARD)
+```bash
+git clone https://github.com/kuznyechik/mossad-cli
+cd mossad-cli
+cargo build --release
+```
 
----
+## Utilisation
 
-## 📦 Exemple d’utilisation
-
-### 🔒 Créer une archive
+**Créer une archive**
 
 ```bash
 mossad compress dossier/
 ```
 
-### 🔓 Extraire
+**Extraire une archive**
 
 ```bash
 mossad extract archive.mossad
 ```
 
-Mot de passe incorrect :
-```
-Gros nul c'est pas le bon mdp
-```
+## Sécurité
 
----
+Ce projet n'a pas fait l'objet d'un audit externe. L'utilisation en environnement de production est à vos risques.
 
-## 🤝 Contribuer
+Pour signaler une vulnérabilité : ouvrir une issue privée ou contacter directement le mainteneur.
 
-Les contributions sont **bienvenues** :
-- sécurité
-- fuzzing
-- refactor
-- docs
+## Contribuer
 
-```bash
-git clone https://github.com/kuznyechik/mossad-cli
-cargo build
-```
+Les contributions sont bienvenues, notamment sur :
 
----
+- Audit de sécurité et fuzzing
+- Documentation
+- Refactoring
 
-## 📜 Licence
+## Licence
 
 MIT
