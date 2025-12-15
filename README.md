@@ -64,7 +64,7 @@ Les contributions sont **bienvenues** :
 - docs
 
 ```bash
-git clone https://github.com/tonpseudo/mossad-cli
+git clone https://github.com/kuznyechik/mossad-cli
 cargo build
 ```
 
