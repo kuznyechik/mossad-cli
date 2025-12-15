@@ -50,7 +50,7 @@ mossad extract archive.mossad
 
 Ce projet n'a pas fait l'objet d'un audit externe. L'utilisation en environnement de production est à vos risques.
 
-Pour signaler une vulnérabilité : ouvrir une issue privée ou contacter directement le mainteneur.
+Pour signaler une vulnérabilité : ouvrir une issue ou me contacter directement.
 
 ## Contribuer
 
