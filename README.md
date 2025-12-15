@@ -4,25 +4,27 @@ Archive chiffrée moderne en Rust — compression, chiffrement Kuznyechik (CTR),
 
 ## Présentation
 
-**mossad-cli** est un outil en ligne de commande pour créer des archives chiffrées au format propriétaire `.mossad`.
+`mossad-cli` est un outil en ligne de commande pour créer des archives chiffrées au format propriétaire `.mossad`.
 
-| Fonction | Implémentation |
-|----------|----------------|
-| Compression | DEFLATE |
-| Chiffrement | Kuznyechik (mode CTR) |
-| Dérivation de clé | Argon2id |
-| Authentification | Encrypt-then-MAC (HMAC-SHA256) |
-| Intégrité | CRC64 par fichier |
+| Fonction              | Implémentation               |
+|-----------------------|------------------------------|
+| Compression           | DEFLATE                      |
+| Chiffrement           | Kuznyechik (mode CTR)        |
+| Dérivation de clé     | Argon2id                     |
+| Authentification      | Encrypt-then-MAC (HMAC-SHA256) |
+| Intégrité             | CRC64 par fichier            |
 
-Le projet privilégie la lisibilité du code et la robustesse cryptographique.
+> ⚠️ **Note** : Seuls les **dossiers** peuvent être archivés pour l’instant (pas de support direct des fichiers uniques).
 
 ## Fonctionnalités
 
-- Format `.mossad` auto-descriptif et versionné
-- Streaming (consommation mémoire constante)
-- Double volume caché (plausible deniability)
-- Barre de progression
-- Saisie du mot de passe masquée
+- Format `.mossad` auto-descriptif et versionné  
+- **Streaming** (consommation mémoire constante, même pour les gros fichiers)  
+- **Support multiplateforme** : Windows, Linux, macOS  
+- **Métadonnées complètes** : permissions, timestamps, liens symboliques  
+- Double volume caché (plausible deniability)  
+- Barre de progression en temps réel  
+- Saisie du mot de passe masquée  
 
 ## Installation
 
